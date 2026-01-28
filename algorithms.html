@@ -3,137 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algorithms & Data Structures | Sylvia Davis</title>
+  <title>Algorithms | Software Design & Engineering</title>
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f7f7f7; }
-    header { background: #111; color: white; padding: 28px 20px; text-align: center; }
-    main { max-width: 950px; margin: 25px auto; padding: 25px; background: white; border-radius: 14px; }
-    a { color: #0b63ce; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .card { background: #fafafa; border: 1px solid #e5e5e5; padding: 16px; border-radius: 12px; margin: 14px 0; }
-    .nav { margin-top: 10px; font-size: 14px; }
-    .nav a { color: #fff; margin: 0 8px; }
-    ul { padding-left: 20px; }
-    code { background: #eee; padding: 2px 6px; border-radius: 6px; }
-    .badge { display: inline-block; background: #eee; padding: 6px 10px; border-radius: 20px; margin: 4px; font-size: 14px; }
+    :root{
+      --bg: #0f0f10;
+      --text: #111;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --link: #2563eb;
+      --headerText: #ffffff;
+      --headerMuted: rgba(255,255,255,.85);
+      --pill: #f3f4f6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:#f7f7f8;
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    /* Header */
+    header{
+      background: var(--bg);
+      color: var(--headerText);
+      padding: 38px 18px 18px;
+      text-align:center;
+    }
+    header h1{
+      margin:0;
+      font-size: 40px;
+      letter-spacing:.3px;
+    }
+    nav{
+      margin-top: 14px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:14px;
+    }
+    nav a{
+      color: var(--headerMuted);
+      text-decoration:none;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover{ background: rgba(255,255,255,.08); color:#fff; }
+    nav a.active{ color:#fff; background: rgba(255,255,255,.12); }
+
+    /* Layout */
+    main{
+      max-width: 980px;
+      margin: 22px auto 70px;
+      padding: 0 16px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+      margin-bottom: 18px;
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 26px;
+    }
+    .card p{ margin: 10px 0; }
+    .muted{ color: var(--muted); }
+    .pillRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .pill{
+      background: var(--pill);
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color:#111;
+    }
+    ul{ margin: 10px 0 0 18px; }
+    li{ margin: 6px 0; }
+    a{ color: var(--link); }
+    .small-note{
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    footer{
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 30px 16px 50px;
+    }
   </style>
 </head>
+
 <body>
+  <header>
+    <h1>Software Design & Engineering</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="code-review.html">Code Review</a>
+      <a class="active" href="algorithms.html">Algorithms</a>
+      <a href="databases.html">Databases</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Algorithms & Data Structures</h1>
-  <div class="nav">
-    <a href="index.html">Home</a> |
-    <a href="code-review.html">Code Review</a> |
-    <a href="software-design.html">Software Design</a> |
-    <a href="databases.html">Databases</a> |
-    <a href="self-assessment.html">Self-Assessment</a>
-  </div>
-</header>
+  <main>
+    <section class="card">
+      <h2>Artifact Overview: Algorithms & Data Structures</h2>
+      <p>
+        This page highlights my Algorithms & Data Structures artifact, focusing on how I applied core
+        algorithmic thinking to solve problems efficiently and produce a maintainable, professional solution.
+        The work demonstrates how I approach problem solving using data structures, clean logic, and
+        structured design decisions that support readability and long-term improvement.
+      </p>
+      <p><strong>Category:</strong> Algorithms and Data Structures</p>
 
-<main>
+      <div class="pillRow">
+        <span class="pill">Data Structures</span>
+        <span class="pill">Algorithm Efficiency</span>
+        <span class="pill">Clean, Readable Code</span>
+        <span class="pill">Maintainability</span>
+        <span class="pill">Testing / Validation</span>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>Artifact Overview</h2>
-    <p>
-      This artifact is based on my CS 320 work involving the development and testing of a Java service for managing appointment data.
-      The project applies validation logic to enforce business rules and includes unit tests written with JUnit to ensure correctness.
-      For CS 499, I enhanced this artifact to better demonstrate algorithmic thinking and effective use of data structures by improving
-      test design and reducing repetitive test code.
-    </p>
+    <section class="card">
+      <h2>Why This Artifact Is Included</h2>
+      <p>
+        I included this artifact in my ePortfolio because it demonstrates my ability to design a solution
+        using appropriate data structures and algorithmic logic. It reflects how I break down requirements,
+        choose an approach that supports performance and clarity, and implement a solution that is easier to
+        maintain and extend over time.
+      </p>
+    </section>
 
-    <p><strong>Course:</strong> CS 320: Software Test, Automation, and Quality Assurance</p>
-    <p><strong>Category:</strong> Algorithms and Data Structures</p>
-  </div>
+    <section class="card">
+      <h2>Skills Demonstrated</h2>
+      <ul>
+        <li><strong>Algorithm design:</strong> structured problem solving with clear control flow and logic.</li>
+        <li><strong>Data structure selection:</strong> using the right structure to support efficiency and readability.</li>
+        <li><strong>Maintainability:</strong> improving organization so future updates are simpler and safer.</li>
+        <li><strong>Reliability:</strong> input validation and handling edge cases to prevent runtime issues.</li>
+        <li><strong>Professional documentation:</strong> explaining decisions clearly for reviewers and stakeholders.</li>
+      </ul>
+    </section>
 
-  <div class="card">
-    <h2>Why This Artifact Is Included</h2>
-    <p>
-      I selected this artifact for my ePortfolio because it demonstrates how algorithmic principles and data structures can be applied
-      to produce more maintainable and scalable software. While service logic and validation rules are important, the enhancement focuses
-      on improving how the project is tested by organizing test cases using structured collections and repeatable patterns. This approach
-      reflects professional testing practices and strengthens the reliability and long-term maintainability of the solution.
-    </p>
-  </div>
+    <section class="card">
+      <h2>Enhancement Summary</h2>
+      <ul>
+        <li><strong>Before:</strong> Functionality existed, but needed stronger structure, validation, and clearer presentation.</li>
+        <li><strong>After:</strong> Improved organization and strengthened reliability with clearer logic and safer handling of inputs.</li>
+        <li><strong>Result:</strong> A more professional, maintainable artifact that better represents algorithm and data structure skills.</li>
+      </ul>
+    </section>
 
-  <div class="card">
-    <h2>Algorithms & Data Structures Demonstrated</h2>
+    <section class="card">
+      <h2>Artifact Files & Documentation</h2>
 
-    <div>
-      <span class="badge">Collections (List)</span>
-      <span class="badge">Iterative Execution</span>
-      <span class="badge">Data-Driven Testing</span>
-      <span class="badge">Parameterized Tests</span>
-      <span class="badge">Validation & Edge Cases</span>
-    </div>
+      <ul>
+        <li>
+          <strong>Algorithms Artifact Folder:</strong>
+          <a href="https://github.com/sylvianett/Porfolio_CapstoneCS499/tree/main/artifacts/algorithms" target="_blank" rel="noopener">
+            View Algorithms Files (GitHub Folder)
+          </a>
+        </li>
 
-    <ul>
-      <li>
-        Used <strong>structured collections</strong> to store multiple test case inputs instead of writing duplicated unit test code.
-      </li>
-      <li>
-        Applied an <strong>iterative execution pattern</strong> to run validation scenarios efficiently and consistently.
-      </li>
-      <li>
-        Improved test organization by using a scalable method that allows future test cases to be added with minimal code changes.
-      </li>
-      <li>
-        Strengthened overall reliability by validating expected results across multiple edge cases (including invalid inputs).
-      </li>
-    </ul>
-  </div>
+        <li>
+          <strong>Algorithms Enhanced ZIP:</strong>
+          <a href="https://raw.githubusercontent.com/sylvianett/Porfolio_CapstoneCS499/main/artifacts/algorithms/REPLACE_WITH_YOUR_ALGORITHMS_ZIP_FILENAME.zip"
+             target="_blank" rel="noopener">
+            Download Algorithms (ZIP)
+          </a>
+        </li>
 
-  <div class="card">
-    <h2>Enhancement Summary</h2>
-    <ul>
-      <li><strong>Before:</strong> Unit tests were repetitive and required manual duplication for each new scenario.</li>
-      <li><strong>After:</strong> Unit tests were refactored into a structured approach using collections and repeatable execution patterns.</li>
-      <li><strong>Result:</strong> Cleaner test code, easier maintenance, scalable testing design, and stronger demonstration of algorithms/data structures.</li>
-    </ul>
-  </div>
+        <li>
+          <strong>Milestone Enhancement Narrative:</strong>
+          <a href="https://raw.githubusercontent.com/sylvianett/Porfolio_CapstoneCS499/main/artifacts/algorithms/REPLACE_WITH_YOUR_ALGORITHMS_NARRATIVE_FILENAME.docx"
+             target="_blank" rel="noopener">
+            Download Narrative (DOCX)
+          </a>
+        </li>
+      </ul>
 
-  <div class="card">
-    <h2>Course Outcomes Addressed</h2>
-    <p>
-      This enhancement demonstrates progress toward the Computer Science program outcome related to designing and evaluating computing solutions
-      using algorithmic principles and standards appropriate to the solution. It also supports communication outcomes by documenting the work
-      and presenting the enhancement in a portfolio-ready format.
-    </p>
-  </div>
+      <p class="small-note">
+        If a download link 404s, the filename in GitHub is different (spacing/capitalization). Open the file in GitHub,
+        copy the exact filename, and replace the placeholder above.
+      </p>
+    </section>
 
-  <div class="card">
-    <h2>Artifact Files & Documentation</h2>
-    <ul>
-      <li>
-        <strong>Enhanced Artifact Folder:</strong>
-        <a href="https://github.com/sylvianett/Porfolio_CapstoneCS499/tree/main/artifacts/algorithms" target="_blank">
-          View Enhanced Artifact Code (GitHub)
-        </a>
-      </li>
-      <li>
-        <strong>Milestone Three Narrative:</strong>
-        <a href="https://github.com/sylvianett/Porfolio_CapstoneCS499/blob/main/artifacts/algorithms/CS499_Milestone3_Algorithms_Narrative_Sylvia_Davis.docx" target="_blank">
-          Download Narrative (DOCX)
-        </a>
-      </li>
-    </ul>
+    <section class="card">
+      <h2>Reflection</h2>
+      <p>
+        Working on this artifact strengthened my understanding of how algorithm and data structure choices impact
+        performance, readability, and long-term maintainability. A key takeaway was the importance of writing code
+        that is not only correct, but also organized and easy to extend. Improving structure and validation helped
+        reinforce professional engineering practices and made the overall solution more reliable.
+      </p>
+    </section>
+  </main>
 
-    <p>
-      <em>Note:</em> If the narrative link does not open, confirm the uploaded file name matches the link exactly.
-    </p>
-  </div>
+  <footer>
+    © <span id="year"></span> Sylvia Davis • ePortfolio
+  </footer>
 
-  <div class="card">
-    <h2>Reflection</h2>
-    <p>
-      Enhancing this artifact helped me understand how data structures and algorithmic approaches can improve the quality of unit tests.
-      By converting repetitive tests into data-driven patterns, I improved the maintainability of the test suite while keeping validation coverage strong.
-      A challenge in this enhancement was ensuring that refactoring did not reduce test coverage, which required careful planning and review of expected outcomes.
-      Overall, the enhancement strengthened my ability to design scalable solutions and reinforced the importance of clean, structured testing.
-    </p>
-  </div>
-
-</main>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
